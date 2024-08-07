@@ -1,0 +1,12 @@
+services:
+  supermercado-service:
+    image: guilhermejr/sistema-notificacao-service
+    container_name: notificacao-service
+    restart: always
+    ports:
+      - "9007:9007"
+
+networks:
+  default:
+    external:
+      name: rede
