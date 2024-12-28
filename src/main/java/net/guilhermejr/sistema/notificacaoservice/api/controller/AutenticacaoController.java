@@ -17,10 +17,18 @@ public class AutenticacaoController {
 
     private final AutenticacaoService autenticacaoService;
 
-    @PostMapping("/enviar-recuperar-senha-fila")
-    public ResponseEntity<Void> enviarRecuperarSenhaFila(@RequestBody RecuperarSenhaRequest recuperarSenhaRequest) {
+//    @PostMapping("/enviar-recuperar-senha-fila")
+//    public ResponseEntity<Void> enviarRecuperarSenhaFila(@RequestBody RecuperarSenhaRequest recuperarSenhaRequest) {
+//
+//        autenticacaoService.enviarRecuperarSenhaFila(recuperarSenhaRequest);
+//        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+//
+//    }
 
-        autenticacaoService.enviarRecuperarSenhaFila(recuperarSenhaRequest);
+    @PostMapping("/enviar-link")
+    public ResponseEntity<Void> enviarLink(@RequestBody RecuperarSenhaRequest recuperarSenhaRequest) {
+
+        autenticacaoService.enviarLink(recuperarSenhaRequest);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 
     }

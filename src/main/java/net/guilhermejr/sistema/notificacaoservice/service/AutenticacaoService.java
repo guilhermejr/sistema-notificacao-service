@@ -19,7 +19,22 @@ public class AutenticacaoService {
     @Value("${cloud.aws.fila.esqueci-minha-senha.url}")
     private String esqueciMinhaSenhaUrl;
 
-    public void enviarRecuperarSenhaFila(RecuperarSenhaRequest recuperarSenhaRequest) {
+//    public void enviarRecuperarSenhaFila(RecuperarSenhaRequest recuperarSenhaRequest) {
+//
+//        ObjectMapper objectMapper = new ObjectMapper();
+//        String json = null;
+//        try {
+//            json = objectMapper.writeValueAsString(recuperarSenhaRequest);
+//        } catch (JsonProcessingException e) {
+//            throw new RuntimeException(e);
+//        }
+//
+//        sqsTemplate.send(esqueciMinhaSenhaUrl, json);
+//        log.info("Envio de nova senha gravado na fila com sucesso");
+//
+//    }
+
+    public void enviarLink(RecuperarSenhaRequest recuperarSenhaRequest) {
 
         ObjectMapper objectMapper = new ObjectMapper();
         String json = null;
@@ -30,7 +45,7 @@ public class AutenticacaoService {
         }
 
         sqsTemplate.send(esqueciMinhaSenhaUrl, json);
-        log.info("Envio de nova senha gravado na fila com sucesso");
+        log.info("Envio de dados para enviar link com recuperação da senha feito com sucesso");
 
     }
 
