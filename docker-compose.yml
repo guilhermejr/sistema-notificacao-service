@@ -3,6 +3,7 @@ services:
     image: guilhermejr/sistema-notificacao-service
     container_name: notificacao-service
     restart: always
+    env_file: /home/guilhermejr/secrets/notificacao-service.env
     ports:
       - "127.0.0.1:9007:9007"
 
