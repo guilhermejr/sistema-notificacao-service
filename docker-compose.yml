@@ -1,5 +1,5 @@
 services:
-  supermercado-service:
+  notificacao-service:
     image: guilhermejr/sistema-notificacao-service
     container_name: notificacao-service
     restart: always
