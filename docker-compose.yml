@@ -4,7 +4,7 @@ services:
     container_name: notificacao-service
     restart: always
     ports:
-      - "9007:9007"
+      - "127.0.0.1:9007:9007"
 
 networks:
   default:
